@@ -1,0 +1,18 @@
+# Interne projectinstructies voor Codex
+AGENTS.md
+
+# Tijdelijke lokale testbestanden
+.chrome-*/
+.codex-*/
+*-test.png
+*-test.jpg
+*-test.webp
+
+# Windows-systeembestanden
+Thumbs.db
+Desktop.ini
+
+# Editor- en tijdelijke bestanden
+*.tmp
+*.bak
+*~

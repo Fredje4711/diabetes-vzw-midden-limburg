@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foto’s vorige activiteiten | Diabetes in Beweging Midden-Limburg vzw</title>
+  <meta name="description" content="Bekijk foto’s van vorige activiteiten van Diabetes in Beweging Midden-Limburg vzw.">
+  <link rel="icon" href="icon-192x192.png?v=20260717-round" type="image/png">
+  <link rel="stylesheet" href="site/css/main.css?v=20260717-vzw-theme1">
+</head>
+<body class="theme-vzw">
+  <a class="skip-link" href="#hoofdinhoud">Ga naar de hoofdinhoud</a>
+
+  <a class="homepage-banner" href="index.html" aria-label="Diabetes in Beweging Midden-Limburg vzw, home">
+    <img src="site/image/webLogov3_2.png" alt="Diabetes in Beweging Midden-Limburg vzw">
+  </a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="mobile-brand" href="index.html" aria-label="Diabetes in Beweging Midden-Limburg vzw, home">
+        <span>Diabetes in Beweging Midden-Limburg vzw</span>
+        <small>Samen sterker</small>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="hoofdnavigatie">
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span class="label">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="hoofdnavigatie" aria-label="Hoofdnavigatie">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="infosessies.html">Infosessies</a></li>
+          <li><a class="nav-link" href="cultuur-ontspanning.html">Cultuur &amp; ontspanning</a></li>
+          <li><a class="nav-link" href="fotos.html" aria-current="page">Foto’s</a></li>
+          <li><a class="nav-link" href="videos.html">Video’s</a></li>
+          <li class="has-submenu">
+            <button class="submenu-toggle" type="button" aria-expanded="false">
+              Diabetesinformatie <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="submenu">
+              <li><a href="diabetes-100-vragen.html">Diabetes 100 Q&amp;A</a></li>
+              <li><a href="mythen-en-feiten.html">Mythen en feiten</a></li>
+              <li><a href="rijbewijs.html">Diabetes en rijbewijs</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <button class="submenu-toggle new-menu-toggle" type="button" aria-expanded="false">
+              NIEUW <span aria-hidden="true">▾</span>
+            </button>
+            <ul class="submenu submenu-align-right">
+              <li><a href="risicotest-diabetes.html">Risicotest diabetes</a></li>
+              <li><a href="diabetes-in-cijfers.html">Diabetes in cijfers</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="downloads.html">Downloads</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="photos-page" id="hoofdinhoud">
+    <section class="section photos-library-section" id="fotos-vorige-activiteiten" aria-labelledby="fotos-titel">
+      <div class="section-inner">
+        <div class="photos-heading">
+          <div class="eyebrow">Fotoalbum</div>
+          <h1 id="fotos-titel">Foto’s vorige activiteiten</h1>
+        </div>
+
+        <div class="photos-toolbar" aria-label="Fotoalbums filteren">
+          <div class="photos-filter">
+            <label for="photo-year-filter">Toon activiteiten uit</label>
+            <select id="photo-year-filter" data-photo-year-filter>
+              <option value="all">Alle jaren</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="photo-albums-grid" data-photo-albums aria-live="polite"></div>
+
+        <noscript>
+          <p class="notice">Schakel JavaScript in om de fotoalbums te bekijken.</p>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="photo-lightbox" data-photo-lightbox aria-labelledby="photo-lightbox-title">
+    <div class="photo-lightbox-panel">
+      <header class="photo-lightbox-header">
+        <div>
+          <h2 id="photo-lightbox-title" data-photo-lightbox-title>Fotoalbum</h2>
+          <p data-photo-lightbox-meta></p>
+        </div>
+        <button class="photo-lightbox-close" type="button" data-photo-close aria-label="Sluit fotoalbum">×</button>
+      </header>
+
+      <div class="photo-lightbox-stage" data-photo-stage>
+        <img data-photo-lightbox-image src="" alt="">
+      </div>
+
+      <div class="photo-lightbox-actions">
+        <button class="button secondary" type="button" data-photo-previous>← Vorige</button>
+        <span data-photo-counter aria-live="polite"></span>
+        <button class="button secondary" type="button" data-photo-next>Volgende →</button>
+      </div>
+
+      <div class="photo-lightbox-tools">
+        <button class="photo-tool-button" type="button" data-photo-zoom aria-pressed="false">Vergroten</button>
+        <a class="photo-tool-button" href="" download data-photo-download>Foto downloaden</a>
+      </div>
+    </div>
+  </dialog>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+      <section class="footer-about" aria-labelledby="footer-organisatie">
+        <h2 id="footer-organisatie">Diabetes in Beweging Midden-Limburg vzw</h2>
+        <p>Lokale informatie, activiteiten en ontmoeting voor iedereen die met diabetes te maken krijgt.</p>
+        <a class="footer-contact-link" href="mailto:diabetesliga.middenlimburg@gmail.com">diabetesliga.middenlimburg@gmail.com</a>
+      </section>
+
+      <nav class="footer-nav" aria-labelledby="footer-activiteiten">
+        <h2 id="footer-activiteiten">Activiteiten</h2>
+        <ul>
+          <li><a href="infosessies.html">Infosessies</a></li>
+          <li><a href="cultuur-ontspanning.html">Cultuur &amp; ontspanning</a></li>
+          <li><a href="wekelijkse-wandeling.html">Wekelijkse wandeling</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-labelledby="footer-informatie">
+        <h2 id="footer-informatie">Diabetesinformatie</h2>
+        <ul>
+          <li><a href="diabetes-100-vragen.html">Diabetes 100 Q&amp;A</a></li>
+          <li><a href="mythen-en-feiten.html">Mythen en feiten</a></li>
+          <li><a href="rijbewijs.html">Diabetes en rijbewijs</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav" aria-labelledby="footer-ontdekken">
+        <h2 id="footer-ontdekken">Meer ontdekken</h2>
+        <ul>
+          <li><a href="fotos.html">Foto’s</a></li>
+          <li><a href="videos.html">Video’s</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="risicotest-diabetes.html">Risicotest diabetes</a></li>
+          <li><a href="diabetes-in-cijfers.html">Diabetes in cijfers</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-social-bar">
+      <div class="footer-social-inner">
+        <div class="footer-social-links" aria-label="Contact- en sociale mediakanalen">
+          <a href="mailto:diabetesliga.middenlimburg@gmail.com">
+            <svg aria-hidden="true"><use href="site/image/footer-social-icons.svg#email"></use></svg>
+            <span>E-mail</span>
+          </a>
+          <a href="https://www.facebook.com/p/Diabetes-Liga-Midden-Limburg-100091325418693/?locale=nl_NL" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="site/image/footer-social-icons.svg#facebook"></use></svg>
+            <span>Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/diabetes_liga_midden_limburg/" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="site/image/footer-social-icons.svg#instagram"></use></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@Diabetesligamiddenlimburg" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="site/image/footer-social-icons.svg#youtube"></use></svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-current-year></span> Diabetes in Beweging Midden-Limburg vzw</span>
+      <div class="footer-bottom-links">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site/js/navigation.js?v=20260715-nieuw" defer></script>
+  <script src="site/js/main.js?v=20260715-fotos2" defer></script>
+</body>
+</html>
