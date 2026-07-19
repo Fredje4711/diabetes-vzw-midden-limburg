@@ -247,9 +247,11 @@ footer p {
     filter: brightness(1.2);
 }
 
-@media screen and (min-width: 769px) and (max-width: 1280px) {
+@media screen and (min-width: 769px) and (max-width: 1280px),
+       screen and (min-width: 769px) and (hover: none) and (pointer: coarse) {
   .flashcard-grid {
     box-sizing: border-box;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .flashcard {
