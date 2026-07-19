@@ -325,6 +325,16 @@ footer p {
   }
 }
 
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  .flashcard-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .flashcard {
+    height: 180px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .flashcard-grid {
     padding: 0 6px;
