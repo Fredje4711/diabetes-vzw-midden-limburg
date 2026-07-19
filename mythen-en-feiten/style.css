@@ -247,6 +247,31 @@ footer p {
     filter: brightness(1.2);
 }
 
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  .flashcard-grid {
+    box-sizing: border-box;
+  }
+
+  .flashcard {
+    height: 180px;
+  }
+
+  .flashcard-front,
+  .flashcard-back {
+    padding: 7px 9px;
+  }
+
+  .flashcard h2 {
+    margin-bottom: 4px;
+    font-size: 1em;
+  }
+
+  .flashcard p {
+    font-size: 0.78em;
+    line-height: 1.25;
+  }
+}
+
 @media screen and (max-width: 768px) {
   header {
     margin-bottom: 6px;
