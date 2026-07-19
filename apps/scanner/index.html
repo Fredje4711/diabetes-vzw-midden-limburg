@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koolhydraten Scanner | Diabetes in Beweging</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#23a9e4">
+  <link rel="apple-touch-icon" href="icon-192.png">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker geregistreerd'))
+        .catch(err => console.log('SW fout:', err));
+    });
+  }
+</script>
+
+  
+</head>
+<body>
+  <header>
+    <h1>🍽️ Koolhydraten Scanner</h1>
+    <p class="app-subtitle">Een hulpmiddel van Diabetes in Beweging</p>
+  </header>
+
+  <nav class="app-navigation" aria-label="Terug naar het app-overzicht">
+    <a class="back-link" href="../../onze-diabetes-apps.html">← Terug naar Onze Diabetes-apps</a>
+  </nav>
+
+  <main id="app">
+    <section id="input-section">
+<div class="upload-buttons">
+  <label class="btn-camera">
+    📸 Maak foto
+    <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display:none;">
+  </label>
+
+  <label class="btn-file">
+    📁 Kies bestand
+    <input type="file" id="fileInput" accept="image/*" style="display:none;">
+  </label>
+</div>
+
+
+      <div class="desc-label">
+  <label for="description">📝 Beschrijving (optioneel)</label>
+  <button id="infoLink" class="info-link" type="button" aria-haspopup="dialog"><b>Meer uitleg…</b></button>
+</div>
+
+<textarea id="description" placeholder="Voeg eventueel wat uitleg toe..."></textarea>
+
+<!-- Popup uitleg -->
+<div id="infoPopup" class="info-popup" role="dialog" aria-modal="true" aria-labelledby="scanner-uitleg-titel" hidden>
+  <div class="popup-content">
+    <button class="close-popup" id="closePopup" type="button" aria-label="Uitleg sluiten">✖</button>
+    <h2 id="scanner-uitleg-titel">Hoe gebruikt u de scanner?</h2>
+    <p>
+  📸 <b>Maak foto</b> – dit opent de camera van je smartphone om meteen een foto te nemen. <br><br>
+  
+  📁 <b>Kies bestand</b> - selecteer een bestaande foto van je toestel of computer. <br><br>
+
+  📝 <b>Beschrijf</b> eventueel kort wat er op het bord ligt (ingrediënten, portie, saus …).  
+  Deze tekstbeschrijving is <b>optioneel</b> — je hoeft dus niet altijd iets in te vullen,  
+  maar extra informatie kan wel helpen om het resultaat nauwkeuriger te maken.<br><br>
+
+  🎙️ <b>Gebruik van spraak</b> is eveneens <b>optioneel</b>.  
+  Je kunt tekst inspreken in plaats van te typen, of als aanvulling op wat je al hebt ingevuld.  
+  De herkende tekst verschijnt na een paar seconden automatisch in het tekstvak.<br><br>
+
+  🔍 Tik daarna op <b>Analyseer,</b> na een paar seconden worden de koolhydraten weergegeven.<br><br>
+
+  💡 <b>Note:</b> de berekening blijft altijd een <b>geschatte waarde</b>,  
+      afhankelijk van de kwaliteit van de foto en de duidelijkheid van de ingevoerde tekst of spraak.<br><br>
+
+  🔒 <b>Privacy:</b> de gekozen foto en eventuele spraakopname worden voor de analyse via onze server naar OpenAI verzonden. Gebruik geen foto’s waarop personen of andere gevoelige gegevens zichtbaar zijn.
+</p>
+
+  </div>
+</div>
+
+
+      <div class="button-row">
+        <button id="recordBtn">🎤 Inspreken</button>
+        <button id="resetBtn" class="small-btn">♻️ Reset</button>
+        <button id="analyzeButton">🔍 Analyseer</button>
+      </div>
+	  
+	  <div id="creditBox" class="credit-box">
+      <p><b>🔢 Resterende gratis scans:</b> <span id="creditCount">50</span></p>
+      </div>
+	  
+    </section>
+
+    <section id="result-section">
+      <img id="preview" src="" alt="Voorbeeld van de gekozen maaltijdfoto" style="display:none;">
+      <pre id="resultText" aria-live="polite">Nog geen analyse uitgevoerd.</pre>
+    </section>
+	
+	<div id="creditInfo" class="credit-info"></div>
+
+	
+  </main>
+
+  <footer class="app-footer">
+  <div class="footer-card">
+    <p>© 2026 – Diabetes in Beweging – Midden-Limburg vzw</p>
+    <p class="disclaimer">
+      Deze applicatie is bedoeld ter ondersteuning van bewustwording over koolhydraten.<br>
+      De resultaten zijn indicatief en vervangen geen professioneel medisch advies.
+    </p>
+  </div>
+</footer>
+
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

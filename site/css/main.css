@@ -4733,3 +4733,431 @@ body.theme-vzw {
     width: 3.4rem;
   }
 }
+
+/* Onze Diabetes-apps en de toestelgerichte installatie-uitleg. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.apps-intro .section-heading {
+  max-width: 58rem;
+}
+
+.device-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  max-width: 58rem;
+  margin: 1.25rem 0 0;
+  padding: .9rem 1rem;
+  color: var(--vzw-navy);
+  background: #eef9fc;
+  border: 1px solid #83cddd;
+  border-left: .38rem solid var(--vzw-cyan);
+  border-radius: .35rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.device-notice::before {
+  content: "i";
+  flex: 0 0 1.55rem;
+  display: grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  color: #ffffff;
+  background: var(--vzw-navy);
+  border-radius: 50%;
+  font-family: Arial, sans-serif;
+  font-size: .95rem;
+  font-weight: 900;
+}
+
+.apps-library-section {
+  background: #f4f8fa;
+}
+
+.home-apps-teaser-section {
+  padding-block: 1.25rem;
+  background: #eef9fc;
+  border-block: 1px solid #b8dce6;
+}
+
+.activity-app-callout-section {
+  padding-block: 1.25rem;
+  background: #eef9fc;
+}
+
+.activity-app-callout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  background: #ffffff;
+  border-left: .4rem solid var(--vzw-cyan);
+  border-radius: .4rem;
+}
+
+.activity-app-callout h2 {
+  margin: .15rem 0 .35rem;
+  color: var(--vzw-navy);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+}
+
+.activity-app-callout p,
+.activity-app-callout .button-row {
+  margin-block: 0;
+}
+
+.home-apps-teaser {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  background: #ffffff;
+  border-left: .4rem solid var(--vzw-orange);
+  border-radius: .4rem;
+  box-shadow: 0 .2rem .7rem rgba(6, 47, 107, .08);
+}
+
+.home-apps-teaser-icons {
+  display: flex;
+  align-items: center;
+  font-size: 1.7rem;
+}
+
+.home-apps-teaser-icons span {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -.35rem;
+  background: #edf8fb;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.home-apps-teaser-icons span:first-child {
+  margin-left: 0;
+}
+
+.home-apps-teaser-content h2 {
+  margin: .15rem 0 .35rem;
+  color: var(--vzw-navy);
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+}
+
+.home-apps-teaser-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.app-card {
+  display: grid;
+  grid-template-columns: minmax(11rem, 36%) 1fr;
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cbd9df;
+  border-top: .35rem solid var(--vzw-cyan);
+  border-radius: .55rem;
+  box-shadow: 0 .25rem .8rem rgba(6, 47, 107, .08);
+}
+
+.app-card:nth-child(even) {
+  border-top-color: var(--vzw-orange);
+}
+
+.app-card-image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 14rem;
+  padding: 1rem;
+  background: #edf6f9;
+  border-right: 1px solid #d7e3e8;
+}
+
+.app-card-image img {
+  width: 100%;
+  max-height: 13rem;
+  object-fit: contain;
+}
+
+.app-card-logo img {
+  max-height: 8rem;
+}
+
+.app-type {
+  position: absolute;
+  left: .65rem;
+  bottom: .65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem .55rem;
+  color: #ffffff;
+  background: var(--vzw-navy);
+  border-radius: .25rem;
+  font-size: .78rem;
+  font-weight: 850;
+}
+
+.app-card-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.25rem;
+}
+
+.app-card-content h2 {
+  margin: 0 0 .6rem;
+  color: var(--vzw-navy);
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+}
+
+.app-card-content p {
+  margin: 0 0 .9rem;
+  line-height: 1.55;
+}
+
+.app-features {
+  display: grid;
+  gap: .38rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.app-features li {
+  position: relative;
+  padding-left: 1.45rem;
+}
+
+.app-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #176b36;
+  font-weight: 900;
+}
+
+.app-privacy-note {
+  padding: .65rem .75rem;
+  color: #4d3210;
+  background: #fff7e8;
+  border-left: .3rem solid var(--vzw-orange);
+  font-size: .92rem;
+}
+
+.app-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: auto;
+}
+
+.app-actions .button {
+  flex: 1 1 10.5rem;
+  min-height: 3rem;
+  text-align: center;
+}
+
+.app-card-website {
+  grid-column: 1 / -1;
+}
+
+.apps-disclaimer {
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  background: #ffffff;
+  border: 2px solid var(--vzw-navy);
+  border-radius: .45rem;
+}
+
+.apps-disclaimer h2 {
+  margin: 0 0 .4rem;
+  color: var(--vzw-navy);
+  font-size: 1.2rem;
+}
+
+.apps-disclaimer p {
+  margin: 0;
+}
+
+.install-header {
+  display: flex;
+  justify-content: center;
+  padding: .75rem 1rem;
+  background: #ffffff;
+  border-bottom: 1px solid #cbd9df;
+}
+
+.install-header img {
+  display: block;
+  width: min(28rem, 82vw);
+  max-height: 5rem;
+  object-fit: contain;
+}
+
+.install-main {
+  min-height: calc(100vh - 6.5rem);
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background: #f4f8fa;
+}
+
+.install-shell {
+  width: min(48rem, 100%);
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: #ffffff;
+  border: 1px solid #cbd9df;
+  border-top: .4rem solid var(--vzw-cyan);
+  border-radius: .55rem;
+  box-shadow: 0 .3rem 1rem rgba(6, 47, 107, .1);
+}
+
+.install-back-link {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  color: var(--vzw-navy);
+  font-weight: 800;
+}
+
+.install-panel {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  background: #f8fbfc;
+  border: 1px solid #b8cdd6;
+  border-radius: .4rem;
+}
+
+.install-panel h2 {
+  margin: 0 0 .7rem;
+  color: var(--vzw-navy);
+  font-size: 1.35rem;
+}
+
+.install-steps {
+  display: grid;
+  gap: .75rem;
+  margin: .9rem 0;
+  padding-left: 1.55rem;
+}
+
+.install-steps li {
+  padding-left: .3rem;
+  line-height: 1.5;
+}
+
+.install-steps li::marker {
+  color: var(--vzw-navy);
+  font-weight: 900;
+}
+
+.install-help {
+  margin-bottom: 0;
+  color: #334d58;
+  font-size: .93rem;
+}
+
+.install-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.35rem;
+}
+
+.install-actions .button {
+  flex: 1 1 13rem;
+  min-height: 3.2rem;
+  text-align: center;
+}
+
+@media (max-width: 72rem) {
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-card-website {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 44rem) {
+  .apps-intro {
+    padding-block: 1rem;
+  }
+
+  .app-card {
+    grid-template-columns: 1fr;
+  }
+
+  .app-card-image {
+    min-height: 12rem;
+    border-right: 0;
+    border-bottom: 1px solid #d7e3e8;
+  }
+
+  .app-card-image img {
+    max-height: 11rem;
+  }
+
+  .app-card-content {
+    padding: 1rem;
+  }
+
+  .app-actions,
+  .install-actions {
+    flex-direction: column;
+  }
+
+  .app-actions .button,
+  .install-actions .button {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .device-notice {
+    font-size: .94rem;
+  }
+
+  .home-apps-teaser {
+    grid-template-columns: 1fr;
+    gap: .9rem;
+  }
+
+  .activity-app-callout {
+    grid-template-columns: 1fr;
+  }
+
+  .home-apps-teaser-icons {
+    justify-content: flex-start;
+  }
+
+  .home-apps-teaser .button {
+    width: 100%;
+    text-align: center;
+  }
+}
