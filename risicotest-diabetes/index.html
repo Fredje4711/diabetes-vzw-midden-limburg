@@ -733,6 +733,9 @@
       }
 
       .topbar,
+      .local-toolbar,
+      .skip-link,
+      .floating-back-to-top,
       .nav-row,
       .actions,
       .btn,
@@ -1025,6 +1028,53 @@
             Bij een verhoogde score of twijfel bespreek je het resultaat best met je huisarts of huisapotheker.
           </div>
 
+          <div class="email-service email-service-empty" id="emailServiceBlock">
+            <label class="email-toggle">
+              <input type="checkbox" id="wantEmailResult" onchange="toggleEmailService()">
+              <span>Ik wil mijn resultaten later per e-mail ontvangen.</span>
+            </label>
+
+            <div id="emailServiceFields" class="email-service-fields" hidden>
+              <p>
+                Vul je naam en e-mailadres in. Klik daarna op <strong>Print of bewaar als PDF</strong>
+                en kies in het afdrukvenster <strong>Opslaan als PDF</strong>.
+              </p>
+              <p class="email-small-note">
+                Gebruik bij voorkeur de voorgestelde bestandsnaam hieronder. Zo kunnen wij de PDF later correct terugvinden en naar jou mailen.
+              </p>
+
+              <div class="email-form-grid">
+                <div class="field">
+                  <label for="visitorName">Naam</label>
+                  <input id="visitorName" type="text" autocomplete="name" placeholder="Voornaam en naam" oninput="updateEmailPrintInfo()">
+                </div>
+                <div class="field">
+                  <label for="visitorEmail">E-mailadres</label>
+                  <input id="visitorEmail" type="email" autocomplete="email" placeholder="naam@example.be" oninput="updateEmailPrintInfo()">
+                </div>
+              </div>
+
+              <label class="consent-line">
+                <input type="checkbox" id="visitorConsent" onchange="updateEmailPrintInfo()">
+                <span>Ik geef toestemming om dit resultaat tijdelijk te bewaren en later per e-mail te bezorgen.</span>
+              </label>
+
+              <div class="filename-box">
+                <span>Voorgestelde bestandsnaam:</span>
+                <strong id="suggestedFileName">Risicotest_diabetes.pdf</strong>
+              </div>
+
+              <div id="emailValidationMsg" class="email-validation" aria-live="polite"></div>
+            </div>
+
+            <div id="emailPrintInfo" class="email-print-info" hidden>
+              <strong>Aanvraag latere e-mailbezorging</strong><br>
+              <span id="emailPrintName"></span><br>
+              <span id="emailPrintAddress"></span><br>
+              <span id="emailPrintConsent"></span>
+            </div>
+          </div>
+
           <div class="actions">
             <button class="btn btn-primary" type="button" onclick="printResult()">Print of bewaar als PDF</button>
             <button class="btn btn-secondary" type="button" onclick="restartTest()">Test opnieuw doen</button>
@@ -1160,6 +1210,7 @@
       currentQuestion = 0;
       document.getElementById("resultScreen").classList.remove("active");
       document.getElementById("testScreen").classList.add("active");
+      resetEmailServiceFields();
       renderQuestion();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1170,7 +1221,29 @@
       document.getElementById("resultScreen").classList.remove("active");
       document.getElementById("testScreen").classList.remove("active");
       document.getElementById("startScreen").style.display = "";
+      resetEmailServiceFields();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function resetEmailServiceFields() {
+      const wantEmail = document.getElementById("wantEmailResult");
+      const fields = document.getElementById("emailServiceFields");
+      const name = document.getElementById("visitorName");
+      const email = document.getElementById("visitorEmail");
+      const consent = document.getElementById("visitorConsent");
+      const printInfo = document.getElementById("emailPrintInfo");
+      const validation = document.getElementById("emailValidationMsg");
+      const serviceBlock = document.getElementById("emailServiceBlock");
+
+      if (wantEmail) wantEmail.checked = false;
+      if (fields) fields.hidden = true;
+      if (name) name.value = "";
+      if (email) email.value = "";
+      if (consent) consent.checked = false;
+      if (printInfo) printInfo.hidden = true;
+      if (validation) validation.textContent = "";
+      if (serviceBlock) serviceBlock.classList.add("email-service-empty");
+      updateSuggestedFileName();
     }
 
     function renderQuestion() {
@@ -1468,7 +1541,7 @@
         year: "numeric"
       });
       document.getElementById("resultDate").textContent = `Datum test: ${formattedDate}`;
-
+      resetEmailServiceFields();
 
       const markerPosition = Math.max(0, Math.min(100, (total / 26) * 100));
       document.getElementById("scoreMarker").style.left = `${markerPosition}%`;
@@ -1482,9 +1555,121 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    function sanitizeFilePart(value) {
+      return (value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-zA-Z0-9_-]+/g, "_")
+        .replace(/^_+|_+$/g, "")
+        .substring(0, 40);
+    }
+
+    function getDateTimeFilePart() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      return `${year}-${month}-${day}_${hours}${minutes}`;
+    }
+
+    function getSuggestedFileName() {
+      const name = sanitizeFilePart(document.getElementById("visitorName")?.value.trim() || "");
+      const baseName = name
+        ? `Risicotest_diabetes_${getDateTimeFilePart()}_${name}`
+        : `Risicotest_diabetes_${getDateTimeFilePart()}`;
+      return `${baseName}.pdf`;
+    }
+
+    function updateSuggestedFileName() {
+      const target = document.getElementById("suggestedFileName");
+      if (target) target.textContent = getSuggestedFileName();
+    }
+
+    function toggleEmailService() {
+      const checkbox = document.getElementById("wantEmailResult");
+      const fields = document.getElementById("emailServiceFields");
+      const validation = document.getElementById("emailValidationMsg");
+      if (!checkbox || !fields) return;
+
+      fields.hidden = !checkbox.checked;
+      if (!checkbox.checked) {
+        document.getElementById("visitorName").value = "";
+        document.getElementById("visitorEmail").value = "";
+        document.getElementById("visitorConsent").checked = false;
+        document.getElementById("emailPrintInfo").hidden = true;
+        document.getElementById("emailServiceBlock").classList.add("email-service-empty");
+        if (validation) validation.textContent = "";
+      }
+
+      updateSuggestedFileName();
+      updateEmailPrintInfo();
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function updateEmailPrintInfo() {
+      const wantEmail = document.getElementById("wantEmailResult")?.checked;
+      const name = document.getElementById("visitorName")?.value.trim() || "";
+      const email = document.getElementById("visitorEmail")?.value.trim() || "";
+      const consent = document.getElementById("visitorConsent")?.checked;
+      const printInfo = document.getElementById("emailPrintInfo");
+      const serviceBlock = document.getElementById("emailServiceBlock");
+      const validation = document.getElementById("emailValidationMsg");
+
+      updateSuggestedFileName();
+      if (!printInfo || !serviceBlock) return;
+
+      if (!wantEmail) {
+        printInfo.hidden = true;
+        serviceBlock.classList.add("email-service-empty");
+        if (validation) validation.textContent = "";
+        return;
+      }
+
+      const complete = name && isValidEmail(email) && consent;
+      if (complete) {
+        document.getElementById("emailPrintName").textContent = `Naam: ${name}`;
+        document.getElementById("emailPrintAddress").textContent = `E-mailadres voor toezending: ${email}`;
+        document.getElementById("emailPrintConsent").textContent = "Toestemming: resultaat mag tijdelijk bewaard worden om later per e-mail te bezorgen.";
+        printInfo.hidden = false;
+        serviceBlock.classList.remove("email-service-empty");
+        if (validation) validation.textContent = "";
+      } else {
+        printInfo.hidden = true;
+        serviceBlock.classList.add("email-service-empty");
+      }
+    }
+
     function printResult() {
+      const wantEmail = document.getElementById("wantEmailResult")?.checked;
+
+      if (wantEmail) {
+        const name = document.getElementById("visitorName").value.trim();
+        const email = document.getElementById("visitorEmail").value.trim();
+        const consent = document.getElementById("visitorConsent").checked;
+        const validation = document.getElementById("emailValidationMsg");
+
+        if (!name) {
+          validation.textContent = "Vul eerst je naam in, of vink de optie voor e-mailbezorging uit.";
+          return;
+        }
+        if (!isValidEmail(email)) {
+          validation.textContent = "Vul eerst een geldig e-mailadres in, of vink de optie voor e-mailbezorging uit.";
+          return;
+        }
+        if (!consent) {
+          validation.textContent = "Vink eerst de toestemming aan, of vink de optie voor e-mailbezorging uit.";
+          return;
+        }
+        updateEmailPrintInfo();
+      }
+
       const originalTitle = document.title;
-      document.title = `Risicotest_diabetes_${new Date().toISOString().slice(0, 10)}`;
+      document.title = getSuggestedFileName().replace(/\.pdf$/i, "");
       window.print();
       setTimeout(() => {
         document.title = originalTitle;
