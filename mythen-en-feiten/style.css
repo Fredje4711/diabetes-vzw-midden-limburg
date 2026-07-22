@@ -7,6 +7,10 @@
     --card-radius: 15px;
 }
 
+.flashcard[id] {
+    scroll-margin-top: 5.5rem;
+}
+
 body {
     font-family: Ubuntu, Arial, sans-serif;
     margin: 0;

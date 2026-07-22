@@ -23,6 +23,10 @@ html {
   scroll-behavior: smooth;
 }
 
+:where(main section[id], main article[id], main h2[id], main h3[id]) {
+  scroll-margin-top: 1rem;
+}
+
 body {
   min-width: 320px;
   max-width: 100%;
