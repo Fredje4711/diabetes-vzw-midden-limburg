@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ankerlinks website | Diabetes in Beweging Midden-Limburg vzw</title>
+  <meta name="description" content="Intern overzicht van de deelbare ankerlinks op de website, met URL's voor Laragon en GitHub Pages.">
+  <link rel="icon" href="icon-192x192.png?v=20260717-round" type="image/png">
+  <link rel="stylesheet" href="site/css/main.css?v=20260722-ankerlinks">
+</head>
+<body class="theme-vzw page-anchor-catalog">
+  <a class="skip-link" href="#catalogus">Ga naar de ankercatalogus</a>
+
+  <a class="homepage-banner" href="index.html" aria-label="Diabetes in Beweging Midden-Limburg vzw, home">
+    <img src="site/image/webLogov3_2.png" alt="Diabetes in Beweging Midden-Limburg vzw">
+  </a>
+
+  <header class="anchor-catalog-toolbar">
+    <div class="anchor-catalog-toolbar-inner">
+      <a class="button secondary" href="index.html">← Terug naar de website</a>
+      <span>Intern hulpmiddel voor het delen van rechtstreekse links</span>
+    </div>
+  </header>
+
+  <main id="hoofdinhoud">
+    <section class="section anchor-catalog-intro" id="uitleg" aria-labelledby="ankerlinks-titel">
+      <div class="section-inner">
+        <div class="eyebrow">Overzicht voor de webmaster en het bestuur</div>
+        <h1 id="ankerlinks-titel">Alle deelbare ankerlinks van de website</h1>
+        <p class="anchor-catalog-lead">
+          Zoek een activiteit, onderwerp, download, fotoalbum of contactpersoon. Bij ieder onderdeel staat
+          zowel de lokale Laragon-URL als de openbare GitHub-URL.
+        </p>
+
+        <div class="anchor-catalog-summary" aria-label="Samenvatting ankercatalogus">
+          <div><strong data-anchor-total>—</strong><span>deelbare links</span></div>
+          <div><strong data-page-total>—</strong><span>pagina’s met ankers</span></div>
+          <div><strong>2</strong><span>URL-versies per anker</span></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section anchor-catalog-section" id="catalogus" aria-labelledby="catalogus-titel">
+      <div class="section-inner">
+        <div class="section-heading compact">
+          <div class="eyebrow">Zoeken en kopiëren</div>
+          <h2 id="catalogus-titel">Ankercatalogus</h2>
+        </div>
+
+        <div class="anchor-catalog-controls" role="search">
+          <div class="anchor-catalog-field anchor-catalog-search-field">
+            <label for="ankerlinks-zoeken">Zoeken</label>
+            <input id="ankerlinks-zoeken" type="search" placeholder="Bijvoorbeeld: ledenfeest, rijbewijs, voeding…" autocomplete="off" data-anchor-search>
+          </div>
+          <div class="anchor-catalog-field">
+            <label for="ankerlinks-categorie">Rubriek</label>
+            <select id="ankerlinks-categorie" data-anchor-category>
+              <option value="">Alle rubrieken</option>
+            </select>
+          </div>
+          <button class="button secondary anchor-catalog-reset" type="button" data-anchor-reset>Filters wissen</button>
+        </div>
+
+        <div class="anchor-catalog-actions">
+          <p class="anchor-catalog-status" data-anchor-status aria-live="polite">De catalogus wordt geladen…</p>
+          <div>
+            <button class="text-button" type="button" data-anchor-expand>Alles openen</button>
+            <button class="text-button" type="button" data-anchor-collapse>Alles sluiten</button>
+          </div>
+        </div>
+
+        <div class="anchor-catalog-results" data-anchor-results></div>
+
+        <noscript>
+          <p class="notice">Schakel JavaScript in om de ankercatalogus te bekijken en URL’s te kopiëren.</p>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer anchor-catalog-footer">
+    <div class="footer-bottom">
+      <span>Intern overzicht · Diabetes in Beweging Midden-Limburg vzw</span>
+      <div class="footer-bottom-links">
+        <a href="index.html">Website</a>
+        <a href="#uitleg">Naar boven</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site/js/ankerlinks.js?v=20260722" defer></script>
+  <script src="site/js/main.js" defer></script>
+</body>
+</html>
