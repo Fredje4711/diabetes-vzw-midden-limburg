@@ -7,7 +7,7 @@
 
   let deviceName = 'computer of tablet';
   let buttonText = 'Bekijk de installatie-uitleg';
-  let message = 'U bekijkt deze pagina op een computer of tablet. U kunt alle toepassingen hier uitproberen. Open deze website-pagina later op uw gsm om ze als app op uw gsm te plaatsen.';
+  let message = 'U bekijkt deze pagina op een computer of tablet. U kunt alle toepassingen hier uitproberen. Open deze website-pagina later op uw gsm om de toepassing(en) als app op uw gsm te plaatsen.';
 
   if (isAppleMobile) {
     deviceName = 'iPhone of iPad';
