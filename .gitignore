@@ -11,6 +11,10 @@ AGENTS.md
 # Ruwe verzamelbestanden voor toekomstige webtoepassingen
 /werkbestanden-webtoepassingen/
 
+# Lokale demonstraties en tijdelijke SEO-controles, niet publiceren
+/bestuursdemo/
+/.codex-seo-*
+
 # Windows-systeembestanden
 Thumbs.db
 Desktop.ini

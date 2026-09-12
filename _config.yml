@@ -1,0 +1,8 @@
+# Alleen publicatie-instellingen voor de bestaande GitHub Pages-omgeving.
+# Geen thema of lokaal buildproces: de website blijft gewone HTML/CSS/JavaScript.
+exclude:
+  - AGENTS.md
+  - bestuursdemo
+  - werkbestanden-webtoepassingen
+  - verbeteringen-2026-09-12.md
+  - ZOEKMACHINES.md
