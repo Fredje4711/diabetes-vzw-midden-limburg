@@ -479,24 +479,31 @@ h3 { line-height: 1.25; }
   border-radius: .2rem;
 }
 
+.footer-about {
+  container-type: inline-size;
+}
+
 .footer-contact-link {
   display: inline-flex;
+  max-width: 100%;
+  white-space: nowrap;
+  min-width: 0;
   align-items: center;
-  gap: .55rem;
+  justify-content: center;
   min-height: 2.75rem;
-  padding: .65rem .8rem;
+  padding: .5rem .55rem;
   color: #ffffff !important;
   background: rgba(35, 169, 228, .18);
   border: 1px solid rgba(114, 207, 244, .42);
   border-radius: .55rem;
-  font-weight: 800;
+  font-size: .75rem;
+  font-size: clamp(.75rem, 4.5cqi, .875rem);
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 .footer-contact-link::before {
-  content: "@";
-  color: #72cff4;
-  font-size: 1.15rem;
-  font-weight: 900;
+  content: none;
 }
 
 .footer-nav ul {
@@ -1097,7 +1104,7 @@ h3 { line-height: 1.25; }
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(245, 250, 253, .92) 0%, rgba(255, 255, 255, .70) 34%, rgba(255, 255, 255, .18) 60%),
-    url("../image/home-hero-activiteiten.png") center center / cover no-repeat;
+    url("../image/home-hero-activiteiten.webp") center center / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1150,7 +1157,7 @@ h3 { line-height: 1.25; }
   .home-hero {
     background:
       linear-gradient(90deg, rgba(245, 250, 253, .94) 0%, rgba(255, 255, 255, .78) 48%, rgba(255, 255, 255, .28) 100%),
-      url("../image/home-hero-activiteiten.png") 68% center / cover no-repeat;
+      url("../image/home-hero-activiteiten.webp") 68% center / cover no-repeat;
   }
 }
 
@@ -1179,7 +1186,7 @@ h3 { line-height: 1.25; }
   .home-hero {
     background:
       linear-gradient(180deg, rgba(245, 250, 253, .88) 0%, rgba(255, 255, 255, .70) 44%, rgba(255, 255, 255, .42) 100%),
-      url("../image/home-hero-activiteiten.png") 72% center / cover no-repeat;
+      url("../image/home-hero-activiteiten.webp") 72% center / cover no-repeat;
   }
 
   .hero-with-background {
@@ -1232,7 +1239,7 @@ h3 { line-height: 1.25; }
   position: relative;
   min-height: 34rem;
   overflow: hidden;
-  background-image: url("../image/home-hero-activiteiten.png");
+  background-image: url("../image/home-hero-activiteiten.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2565,7 +2572,7 @@ h3 { line-height: 1.25; }
 
   .contact-card p,
   .contact-role {
-    font-size: .87rem;
+    font-size: 1rem;
   }
 }
 
@@ -5522,4 +5529,39 @@ body.theme-vzw {
     width: 100%;
     text-align: center;
   }
+}
+
+/* Leesbaarheid en ruimte voor lange teksten, ook bij vergrote letters. */
+.footer-inner > *,
+.contact-card-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-card a {
+  display: inline-block;
+  padding-block: .35rem;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 44.01rem) and (max-width: 69.99rem) {
+  .diabetes-clock {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .clock-status {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+  }
+}
+
+.clock-message p,
+.clock-status,
+.clock-status > p:first-child,
+.clock-countdown {
+  font-size: 1rem;
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }

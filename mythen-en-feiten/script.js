@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function setCardState(card, isFlipped) {
         card.classList.toggle('flipped', isFlipped);
         card.setAttribute('aria-pressed', String(isFlipped));
+        const front = card.querySelector('.flashcard-front');
+        const back = card.querySelector('.flashcard-back');
+        front.setAttribute('aria-hidden', String(isFlipped));
+        back.setAttribute('aria-hidden', String(!isFlipped));
+        const visibleFace = isFlipped ? back : front;
+        const text = visibleFace.querySelector('p').textContent.trim();
+        card.setAttribute('aria-label', `${isFlipped ? 'Feit' : 'Mythe'}: ${text} Activeer om ${isFlipped ? 'de mythe' : 'het feit'} te tonen.`);
     }
 
     function toggleCard(card) {
@@ -22,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.setAttribute('role', 'button');
         card.setAttribute('aria-pressed', 'false');
         card.setAttribute('aria-label', `Mythe ${index + 1}: ${frontText}. Activeer om het feit te tonen.`);
+        setCardState(card, false);
 
         card.addEventListener('click', () => toggleCard(card));
         card.addEventListener('keydown', event => {

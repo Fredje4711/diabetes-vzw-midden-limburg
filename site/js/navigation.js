@@ -32,9 +32,14 @@
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
+    const openSubmenu = document.activeElement?.closest('.has-submenu.open');
+    const focusTarget = nav?.classList.contains('open')
+      ? toggle
+      : openSubmenu?.querySelector('.submenu-toggle');
     nav?.classList.remove('open');
     toggle?.setAttribute('aria-expanded', 'false');
     document.querySelectorAll('.has-submenu.open').forEach((item) => item.classList.remove('open'));
     submenuButtons.forEach((button) => button.setAttribute('aria-expanded', 'false'));
+    focusTarget?.focus();
   });
 })();

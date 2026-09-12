@@ -830,6 +830,7 @@
       }
 
       .email-toggle,
+      #emailServiceExplanation,
       .email-service-fields,
       .email-validation,
       .filename-box {
@@ -1030,9 +1031,14 @@
 
           <div class="email-service email-service-empty" id="emailServiceBlock">
             <label class="email-toggle">
-              <input type="checkbox" id="wantEmailResult" onchange="toggleEmailService()">
-              <span>Ik wil mijn resultaten later per e-mail ontvangen.</span>
+              <input type="checkbox" id="wantEmailResult" aria-describedby="emailServiceExplanation" onchange="toggleEmailService()">
+              <span>Ik wil mijn resultaten later per e-mail ontvangen via een medewerker.</span>
             </label>
+            <p id="emailServiceExplanation" class="email-small-note">
+              Alleen als je dit met een medewerker hebt afgesproken. Deze website verstuurt geen e-mails
+              en bezorgt je gegevens niet automatisch aan onze organisatie.
+              Doe je de test thuis? Je kunt je resultaat meteen afdrukken of als PDF bewaren, zonder deze optie aan te vinken.
+            </p>
 
             <div id="emailServiceFields" class="email-service-fields" hidden>
               <p>
@@ -1040,7 +1046,9 @@
                 en kies in het afdrukvenster <strong>Opslaan als PDF</strong>.
               </p>
               <p class="email-small-note">
-                Gebruik bij voorkeur de voorgestelde bestandsnaam hieronder. Zo kunnen wij de PDF later correct terugvinden en naar jou mailen.
+                Bewaar de PDF en spreek met de medewerker af hoe je die aan hem of haar bezorgt.
+                Pas nadat de medewerker de PDF heeft ontvangen, kan die het resultaat naar jou mailen.
+                Bewaar een PDF met je naam en resultaat niet op een openbare of gedeelde computer.
               </p>
 
               <div class="email-form-grid">

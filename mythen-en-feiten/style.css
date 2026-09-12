@@ -1,7 +1,7 @@
 :root {
-    --main-color: #23a9e4;
-    --dark-main-color: #1a7ea7;
-    --light-main-color: #60c0eb;
+    --main-color: #087ba7;
+    --dark-main-color: #145876;
+    --light-main-color: #087ba7;
     --background-color: #b8e1f8;
     --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     --card-radius: 15px;
@@ -88,19 +88,19 @@ header {
 }
 
 h1 {
-    color: #23a9e4;
+    color: #145876;
     font-size: 2em;
     margin-bottom: 4px; 
     font-weight: 700;
 }
 .flashcard-front p {
-    font-weight: bold !important;
-    font-size: 17px !important;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 .intro-text {
     font-size: 1em;
-    color: #23a9e4;
+    color: #145876;
     margin-top: 0; 
     margin-bottom: 0px; 
 }
@@ -120,7 +120,9 @@ h1 {
 .flashcard {
     background-color: transparent;
     width: 100%;
-    height: 250px;
+    height: auto;
+    min-height: 250px;
+    align-self: start;
     perspective: 1000px;
     cursor: pointer;
     border-radius: var(--card-radius);
@@ -142,7 +144,8 @@ a:focus-visible {
 .flashcard-inner {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
+    min-height: inherit;
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
@@ -175,6 +178,15 @@ a:focus-visible {
     justify-content: flex-start;
 }
 
+.flashcard-front {
+    position: relative;
+    min-height: inherit;
+}
+
+.flashcard.flipped .flashcard-front {
+    position: absolute;
+}
+
 .flashcard h2 {
     font-size: 1.1em;
     font-weight: 600;
@@ -185,22 +197,38 @@ a:focus-visible {
 }
 
 .flashcard p {
-    font-size: 0.8em;
+    font-size: 1rem;
     line-height: 1.4;
     margin: 0;
     text-align: center;
     flex-grow: 1; 
-    overflow-y: auto;
+    overflow-wrap: anywhere;
     align-self: center;
 }
 
+.flashcard-front p {
+    flex: 0 0 auto;
+}
+
 .myth-icon {
-    font-size: 3.5em;
+    display: block;
+    width: 96px;
+    height: 96px;
+    flex: 0 0 auto;
     color: white;
-    opacity: 0.7;
-    margin-top: 6px;
-    margin-bottom: 6px;
-    display: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin: auto;
+}
+
+@media (max-width: 1280px), (hover: none) and (pointer: coarse) {
+    .myth-icon {
+        width: 72px;
+        height: 72px;
+    }
 }
 
 footer {
@@ -251,6 +279,16 @@ footer p {
     filter: brightness(1.2);
 }
 
+footer a {
+    color: #ffffff;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+footer a:focus-visible {
+    outline-color: #ffffff;
+}
+
 @media screen and (min-width: 769px) and (max-width: 1280px),
        screen and (min-width: 769px) and (hover: none) and (pointer: coarse) {
   .flashcard-grid {
@@ -259,7 +297,7 @@ footer p {
   }
 
   .flashcard {
-    height: 180px;
+    min-height: 250px;
   }
 
   .flashcard-front,
@@ -273,8 +311,8 @@ footer p {
   }
 
   .flashcard p {
-    font-size: 0.78em;
-    line-height: 1.25;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 }
 
@@ -302,7 +340,7 @@ footer p {
   }
 
   .flashcard {
-    height: 170px;
+    min-height: 230px;
     border-radius: 10px;
   }
 
@@ -313,19 +351,19 @@ footer p {
   }
 
   .flashcard h2 {
-    font-size: 0.82em;
+    font-size: 1rem;
     line-height: 1.1;
     margin: 1px 0 4px;
   }
 
   .flashcard-front p {
-    font-size: 0.78em !important;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.25;
   }
 
   .flashcard-back p {
-    font-size: 0.72em;
-    line-height: 1.18;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 }
 
@@ -335,7 +373,7 @@ footer p {
   }
 
   .flashcard {
-    height: 180px;
+    min-height: 250px;
   }
 }
 
@@ -346,6 +384,7 @@ footer p {
 }
 
 .floating-back-to-top {
+    /* Zwevende navigatie blijft onafhankelijk van de kaarten. */
     position: fixed;
     right: 1rem;
     bottom: 1rem;
@@ -388,4 +427,15 @@ footer p {
     .floating-back-to-top {
         transition: none;
     }
+}
+
+/* Lange antwoorden blijven volledig leesbaar zonder intern scrollvak. */
+.flashcard.flipped {
+    height: auto;
+    min-height: 250px;
+}
+
+.flashcard.flipped .flashcard-back {
+    position: relative;
+    min-height: 250px;
 }

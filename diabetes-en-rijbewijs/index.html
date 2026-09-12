@@ -697,6 +697,24 @@
             outline-offset: 3px;
         }
 
+        /* Leesbare inhoud op gsm zonder de compacte navigatie te vergroten. */
+        @media screen and (max-width: 768px) {
+            section p,
+            section ul li,
+            .intro-section p,
+            .hero-section p,
+            .cta-bottom-section p,
+            .summary-box,
+            .faq-question,
+            .faq-answer,
+            .select-situation-box label,
+            .select-situation-box select,
+            #dynamic-steps-container p,
+            #dynamic-steps-container ol li {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
     </style>
 </head>
 <body id="top">
