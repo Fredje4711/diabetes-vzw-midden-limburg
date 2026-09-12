@@ -7,8 +7,8 @@
     },
     scanner: {
       name: 'Koolhydraten Scanner',
-      description: 'Maak met een foto een indicatieve schatting van de koolhydraten in een maaltijd.',
-      url: 'scanner/'
+      description: 'Maak of kies een maaltijdfoto en ontvang via AI een schatting per onderdeel, met een beste schatting en waarschijnlijk bereik.',
+      url: 'https://carbo-app.vercel.app/'
     },
     calculator: {
       name: 'Koolhydraten Calculator',
