@@ -1,4 +1,4 @@
-const CACHE_NAME = 'koolhydraten-duel-v2';
+const CACHE_NAME = 'koolhydraten-duel-beweging-v4';
 const APP_FILES = [
   './',
   './index.html',
@@ -20,7 +20,8 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then((names) => Promise.all(
-        names.filter((name) => name !== CACHE_NAME).map((name) => caches.delete(name))
+        names.filter((name) => name.startsWith('koolhydraten-duel-') && name !== CACHE_NAME)
+          .map((name) => caches.delete(name))
       ))
       .then(() => self.clients.claim())
   );
@@ -30,6 +31,8 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => cachedResponse || fetch(event.request))
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.match(event.request))
+      .then((cachedResponse) => cachedResponse || fetch(event.request))
   );
 });

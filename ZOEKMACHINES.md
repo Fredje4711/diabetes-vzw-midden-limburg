@@ -2,7 +2,7 @@
 
 ## Huidig websiteadres
 
-https://fredje4711.github.io/diabetes-vzw-midden-limburg/
+https://fredje4711.github.io/diabetes-in-beweging-midden-limburg/
 
 De site blijft statische HTML, CSS en JavaScript. De zichtbare vormgeving, menunamen en ankerpunten zijn niet veranderd voor SEO.
 
@@ -10,7 +10,7 @@ De site blijft statische HTML, CSS en JavaScript. De zichtbare vormgeving, menun
 
 Bestand: `C:\laragon\www\diabetes-vzw-midden-limburg\sitemap.xml`
 
-Online: https://fredje4711.github.io/diabetes-vzw-midden-limburg/sitemap.xml
+Online: https://fredje4711.github.io/diabetes-in-beweging-midden-limburg/sitemap.xml
 
 De sitemap bevat de unieke voorkeursadressen van inhoudelijke pagina's. Doorverwijzingen, interne overzichten, overlegpagina's en verouderde scanneruitleg staan er niet in. Twee inhoudelijk identieke voedingsartikelen verwijzen met hun canonical naar de versie in de verdiepingsmap; beide oude adressen blijven bruikbaar. Niet-identieke artikelen behouden hun eigen adres.
 
@@ -30,9 +30,9 @@ Er staan bewust geen fictieve lastmod-datums, priority- of changefreq-waarden in
 ## Google Search Console afronden
 
 1. Open https://search.google.com/search-console/ en meld zelf aan met het Google-account dat de vereniging hiervoor wil gebruiken.
-2. Voeg een property van het type **URL-voorvoegsel** toe, niet het domeintype. Vul exact in: `https://fredje4711.github.io/diabetes-vzw-midden-limburg/`.
-3. Kies als verificatiemethode **HTML-tag**. Kopieer de volledige door Google opgegeven meta-tag en geef die aan Codex. Deel geen wachtwoord, herstelcode of aanmeldcode.
-4. Codex kan die verificatietag in de homepage plaatsen en publiceren. Ga pas daarna terug naar Google en klik op Verifiëren. Laat de tag ook na succesvolle verificatie staan.
+2. Voeg een property van het type **URL-voorvoegsel** toe, niet het domeintype. Vul exact in: `https://fredje4711.github.io/diabetes-in-beweging-midden-limburg/`.
+3. Gebruik account `fredje4711@gmail.com`. Het verificatiebestand `google785cecf4c5e4dae5.html` staat ook op het nieuwe adres. Gebruik HTML-bestandverificatie als Google dit bestand opnieuw aanbiedt. Als Google een ander bestand geeft, moet dat eerst worden toegevoegd. Deel geen wachtwoord of aanmeldcode.
+4. Klik pas op Verifiëren nadat het gevraagde bestand online staat. Laat het verificatiebestand permanent op het nieuwe adres staan.
 5. Ga in Search Console naar **Sitemaps**. Dien `sitemap.xml` in onder het hierboven genoemde websiteadres.
 6. Controleer of Google de sitemap kan lezen. Met URL-inspectie kan vervolgens de homepage worden gecontroleerd en, indien nodig, indexering worden aangevraagd.
 
@@ -40,7 +40,11 @@ Indexering en posities zijn beslissingen van Google. Een sitemap, verificatie of
 
 ### Waarom geen robots.txt in deze projectmap?
 
-Voor deze GitHub-projectsite zou een robots.txt op `fredje4711.github.io/diabetes-vzw-midden-limburg/robots.txt` niet de robots.txt van de host zijn. Zoekmachines gebruiken daarvoor `https://fredje4711.github.io/robots.txt`. Dat bestand valt buiten deze repository. Daarom gebruiken we hier pagina-noindex waar nodig en dienen we de sitemap rechtstreeks in Search Console in. Plaats niet zomaar blokkades in een robots.txt van een andere repository.
+Voor deze GitHub-projectsite zou een robots.txt op `fredje4711.github.io/diabetes-in-beweging-midden-limburg/robots.txt` niet de robots.txt van de host zijn. Zoekmachines gebruiken daarvoor `https://fredje4711.github.io/robots.txt`. Dat bestand valt buiten deze repository. Daarom gebruiken we hier pagina-noindex waar nodig en dienen we de sitemap rechtstreeks in Search Console in. Plaats niet zomaar blokkades in een robots.txt van een andere repository.
+
+## Adreswijziging september 2026
+
+De repository en publieke website krijgen de naam `diabetes-in-beweging-midden-limburg`. Op uitdrukkelijk verzoek komt er geen doorverwijssite op het oude adres. Oude zoekresultaten en opgeslagen links kunnen daardoor een foutpagina geven zolang ze nog niet zijn bijgewerkt. Voeg het nieuwe URL-voorvoegsel toe in Search Console en dien daar de sitemap opnieuw in. De oude property kan als historisch overzicht blijven staan. De lokale map en het lokale Laragon-adres blijven ongewijzigd.
 
 ## Een nieuwe pagina toevoegen
 

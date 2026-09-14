@@ -2,7 +2,7 @@
   'use strict';
 
   const LOCAL_BASE = 'http://localhost/diabetes-vzw-midden-limburg/';
-  const GITHUB_BASE = 'https://fredje4711.github.io/diabetes-vzw-midden-limburg/';
+  const GITHUB_BASE = 'https://fredje4711.github.io/diabetes-in-beweging-midden-limburg/';
 
   const resultsContainer = document.querySelector('[data-anchor-results]');
   if (!resultsContainer) return;

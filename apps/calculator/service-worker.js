@@ -1,4 +1,4 @@
-const CACHE_NAME = 'koolhydraten-calculator-v2';
+const CACHE_NAME = 'koolhydraten-calculator-beweging-v4';
 const urlsToCache = [
     './',
     './index.html',
@@ -22,7 +22,7 @@ self.addEventListener('install', (event) => {
 // Fetch-event: Bedien bestanden vanuit de cache of haal ze op van het netwerk
 self.addEventListener('fetch', (event) => {
     event.respondWith(
-        caches.match(event.request)
+        caches.open(CACHE_NAME).then((cache) => cache.match(event.request))
             .then((response) => {
                 // Geef bestanden uit de cache terug of haal ze van het netwerk
                 return response || fetch(event.request);
@@ -37,7 +37,7 @@ self.addEventListener('activate', (event) => {
         caches.keys().then((cacheNames) => {
             return Promise.all(
                 cacheNames.map((cacheName) => {
-                    if (!cacheWhitelist.includes(cacheName)) {
+                    if (cacheName.startsWith('koolhydraten-calculator-') && !cacheWhitelist.includes(cacheName)) {
                         return caches.delete(cacheName);
                     }
                 })
