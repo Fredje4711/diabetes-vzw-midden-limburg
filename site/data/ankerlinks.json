@@ -1,5 +1,82 @@
 [
   {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "over-ons",
+    "label": "Over Diabetes in Beweging"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "voor-wie",
+    "label": "Voor wie zijn wij er?"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "ons-aanbod",
+    "label": "Ons aanbod"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "infosessies-over-diabetes",
+    "label": "Infosessies over diabetes"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "ontmoeting-en-cultuur",
+    "label": "Ontmoeting en cultuur"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "wandelen-en-fietsen",
+    "label": "Wandelen en fietsen"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "informatie-terugvinden",
+    "label": "Informatie terugvinden"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "deelnemen",
+    "label": "Kennismaken en deelnemen"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "kennismaken-met-wandelen",
+    "label": "Kennismaken met wandelen"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "vragen-over-deelname",
+    "label": "Vragen over deelname"
+  },
+  {
+    "category": "Media, downloads en contact",
+    "page": "Over ons",
+    "path": "over-ons.html",
+    "anchor": "onze-mensen",
+    "label": "Onze mensen"
+  },
+  {
     "category": "Startpagina",
     "page": "Diabetes in Beweging Midden-Limburg vzw",
     "path": "index.html",
